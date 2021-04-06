@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- <h1 th:text="'Hello,'+ ${name.getUsername()+','+${name.getPassword()}}"></h1>-->
+<!--
+<ul>
+    <li th:each="user : ${name}" th:text="${user.getUsername()} + ',' + ${user.getPassword()}"></li>
+</ul>
+-->
+<!-- giving address using @ -->
+<!--fields with *-->
+<form action ="#" th:action="@{/login}" th:object ="${userdata}" method="POST">
+    <label>
+        Username:
+        <input type="text" th:field="*{username}">
+    </label>
+
+    <label>
+        Password:
+        <input type="text" th:field="*{password}">
+    </label>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
